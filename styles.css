@@ -1,0 +1,176 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(220, 220, 220, 0.123);
+}
+::-webkit-scrollbar-thumb {
+background: rgb(220,220,220);
+border-radius: 5px;
+}
+
+#jumbotron {
+    min-height: 60vh;
+}
+
+#headshot {
+    width: 20rem;
+}
+.link-primary-ovr {
+    color: rgb(0, 173, 253);
+}
+
+footer {
+    background-color: rgb(41, 41, 41)!important;
+}
+
+.rounded-border {
+    border-radius: 10%;
+}
+
+.navbar {
+    min-height: 10vh;
+}
+
+.nav-link:hover {
+    color: rgb(197, 52, 241)!important;
+}
+
+.text-link {
+    text-decoration: none;
+}
+
+.active {
+    color: rgb(197, 52, 241)!important;
+    border-bottom: 5px solid rgb(197, 52, 241)!important;
+}
+
+.subtle-link:hover {
+    color: rgba(136, 39, 165, 0.733)!important;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    column-gap: 57px;
+    row-gap: max(5vh, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: min(85%, 1500px);
+    justify-content: center;
+}
+
+.img-container {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50%;
+}
+.card-image {
+    position: absolute;
+    bottom: 0; left: 0; top: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.db-img-cont {
+    display: block;
+    padding: 1rem;
+    border-radius: 4% / 5%;
+}
+.db-img {
+    width: 100%;
+}
+.icon-anchor {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.icon-anchor:hover {
+    color: rgb(197, 52, 241)!important;
+}
+
+.square {
+    aspect-ratio: 1;
+}
+
+.card-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(15,15,15,0.6);
+    transition: opacity 0.4;
+}
+.card-hover:hover {
+    opacity: 1;
+}
+
+.modal-jumbo {
+    max-height: 10rem;
+    border-radius: 2% / 3%
+}
+
+.modal-btn {
+    color: rgb(248, 249, 250);
+    border-color: rgb(248, 249, 250);
+}
+
+.modal-btn:hover {
+    color: rgb(171, 68, 255);
+    border-color: rgb(171, 68, 255);
+}
+
+.alert-msg {
+    display: none;
+    /* display: block; */
+    position: absolute;
+    top: -30%;
+    left: 25%;
+    border-radius: 10% / 30%;
+    background-color: rgba(15,15,15,0.3);
+    color: rgb(230, 235, 240);
+    z-index: 1000;
+
+}
+
+
+
+
+code {
+    background-color: rgb(58, 64, 70)!important;
+    color: rgb(230, 235, 240)!important;
+    border-radius: 5%;
+}
+
+.hljs-string {
+    color: rgb(120, 202, 99)!important;
+}
+.hljs-number {
+    color: rgb(255, 163, 26)!important;
+}
+.hljs-title {
+    color: rgb(255, 38, 0)!important;
+}
+.hljs-title .function_ {
+    color: rgb(161, 178, 255)!important;
+}
+.hljs-built_in {
+    color: rgb(151, 170, 255)!important;
+}
+.hljs-keyword {
+    color: rgb(202, 138, 255)!important;
+}
+.hljs-params {
+    color: rgb(241, 57, 57)!important;
+}
+.hljs-params {
+    color: rgb(241, 57, 57)!important;
+}
