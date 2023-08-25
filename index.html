@@ -16,9 +16,9 @@
         <div class="container">
             <div class="row">
                 <nav id="scrollspy-navbar-1" class="navbar navbar-expand-lg">
-                    <div class="container">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fa-solid fa-bars fs-1"></i>
+                    <div class="container justify-content-lg-center">
+                        <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa-solid fa-bars fs-1 text-light"></i>
                         </button>
                         <div class="collapse navbar-collapse justify-content-center flex-lg-grow-0" id="navbarSupportedContent">
                             <ul class="navbar-nav active-target flex-wrap">
@@ -66,7 +66,7 @@
                 <div class="col d-flex justify-content-center justify-content-lg-start">
                     <div class="d-flex flex-column justify-content-center align-items-center text-light text-center px-4">
                         <h1 class="display-6 text-light mb-4">Christopher Franko, Ph.D.</h1>
-                        <p class="lead lh-base mb-0">Full-Stack Developer, Doctor of Physical Chemistry</p>
+                        <p class="lead lh-base mb-0 text-center">Full-Stack Developer, Doctor of Physical Chemistry</p>
                         <div class="text-center mt-4 fs-2">
                             <a class="icon-anchor" href="https://github.com/ChrisFrankoPhD" target="_blank"><i class="fa-brands fa-square-github mx-2" ></i></a>
                             <a class="icon-anchor" href="https://www.linkedin.com/in/christopherjfranko/" target="_blank"><i class="fa-brands fa-linkedin mx-2" ></i></a>
@@ -169,26 +169,26 @@
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row justify-content-center">
-                                    <div class="col-8 my-3">
+                                    <div class="col-lg-8 my-3">
                                         <div class="img-container modal-jumbo">
                                             <img class="card-image" src="./images/TodoImages/dashboardUpdated.JPG" alt="screenshot of Todo app dashboard view showing Chris Franko's To Do List">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10 text-justify">
                                         <p>After spending a significant amount of time working with React and Javascript on the front-end, Python and Javascript on the backend, and Postgres to make simple databases, I was still unaware how to package technologies together into a functional application. Building ToDo was my way of learning just that. Below is a short summary of some personal design choices and highlights from my learning along the way.</p>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mt-4">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Relational Databases with PostgreSQL</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="bg-dark text-light overflow-visible">
+                                                    <code class="language-js py-1 text-start">
 // Search todos
 router.get("/todos/search/:search", 
     authorization, 
@@ -213,7 +213,7 @@ router.get("/todos/search/:search",
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">The pg module is used to access PostgreSQL and store both user profiles and ToDo list items in a relational way</li>
                                                     <li class="mb-5">The appropriate database queries are made at each endpoint, with variables defined by the client safely injected into the query by Postgres through the variable array</li>
@@ -225,14 +225,14 @@ router.get("/todos/search/:search",
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mt-4">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Express RESTful APIs</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="bg-dark text-light overflow-visible">
+                                                    <code class="language-js py-1 text-start">
 // Dashboard Route //
 const router = require("express").Router();
 const authorization = require("../middleware/auth");
@@ -261,7 +261,7 @@ router.get("/todos/search/:search", authorization,
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">ExpressJS is used to route incoming requests to the backend server</li>
                                                     <li class="mb-5">The dashboard route is split into various unique end-points that each handle separate user functions</li>
@@ -274,14 +274,14 @@ router.get("/todos/search/:search", authorization,
                                     </div>
                                 </div>
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>JSON Web Token Authorization</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="bg-dark text-light overflow-visible">
+                                                    <code class="language-js py-1 text-start">
 // Authorization
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
@@ -316,7 +316,7 @@ module.exports = async (req, res, next) => {
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">JSON Web Tokens are used to provide client access to authorized URLs and endpoint </li>
                                                     <li class="mb-5">A JWT is generated by the jsonwebtoken module and given to the client upon each successful register or login</li>
@@ -328,9 +328,9 @@ module.exports = async (req, res, next) => {
                                     </div>
                                 </div>
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Next Steps</h3>
-                                        <ul class="">
+                                        <ul class="text-start">
                                             <li class="mb-3">Rewrite the backend in TypeScript. I have been learning TypeScript while making the RipePotatoes movie review blog project, and would like to refactor a deployed project in TypeScript as well to better understand how it can improve a project</li>
                                             <li class="my-3">Currently the ordering of the Todos is set, adding the ability to reorder items on the ToDo via drag and drop would make for a better user experience, however this needs to be reflected in the database by some mutable "order" value that remembers the changed order of the Todo items</li>
                                             <li class="mb-3">The ability to "pin" specific ToDo items at the top of the list</li>
@@ -354,26 +354,26 @@ module.exports = async (req, res, next) => {
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row justify-content-center">
-                                    <div class="col-8 my-3">
+                                    <div class="col-lg-8 my-3">
                                         <div class="img-container modal-jumbo">
                                             <img class="card-image" src="./images/RipeImages/ripeSearch.JPG" alt="screenshot of Todo app dashboard view showing Chris Franko's To Do List">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10 text-justify">
                                         <p>Ripe Potatoes is my attempt at stepping into a project with a much larger-scale backend. The application is meant to be a movie review blog, taking advantage of the well-structured <a class="link-primary text-decoration-none link-primary-ovr" href="https://www.themoviedb.org" target="_blank">The Movie Database</a> API. I took on this project to better understand how a more complex relational database should be structured, and how a backend API should interact with that database.</p>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mt-4">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>TypeScript Implementation</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="overflow-visible bg-dark text-light">
+                                                    <code class="text-start language-js py-1">
 import jwt, {Secret} from "jsonwebtoken";
 import {Request, Response} from "express";
 import dotenv from 'dotenv';
@@ -400,7 +400,7 @@ export default async (req: Request, res: Response, next: any) => {
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">Typescript is used to enhance the development process, improving testing and error checking</li>
                                                     <li class="mb-5">Module types are imported from the appropiate type libraries, which are installed via npm.</li>
@@ -411,17 +411,17 @@ export default async (req: Request, res: Response, next: any) => {
                                     </div>
                                 </div>
                                 <div class="row justify-content-center mt-4">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Complex Relational Database</h3>
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <div class="row justify-content-center">
-                                            <div class="col-10 d-inline-block">
+                                            <div class="col-lg-10 d-inline-block">
                                                 <div class="db-img-cont bg-light mt-3">
                                                     <img class="db-img" src="./images/RipeImages/ripePotatoesDB.drawio.png" alt="Draw.io diagram of the relational database for RipePotatoes app">
                                                 </div>
                                             </div>
-                                            <div class="col-8 mt-3">
+                                            <div class="col-lg-8 mt-3">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">Users are liked to their respective reviews, comments, likes, and other interactions through their UUID foreign key</li>
                                                     <li class="mb-5">Movies from The Movie Database API are stored in the database by their URI at the time of first interaction with a user. The movies list will grow as interaction increases</li>
@@ -432,14 +432,14 @@ export default async (req: Request, res: Response, next: any) => {
                                     </div>
                                 </div>
                                 <!-- <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Production Frameworks: NextJS</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="overflow-visible bg-dark text-light">
+                                                    <code class="text-start language-js py-1">
 // Authorization
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
@@ -474,7 +474,7 @@ module.exports = async (req, res, next) => {
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">JSON Web Tokens are used to provide client access to authorized URLs and endpoint </li>
                                                     <li class="mb-5">A JWT is generated by the jsonwebtoken module and given to the client upon each successful register or login</li>
@@ -486,9 +486,9 @@ module.exports = async (req, res, next) => {
                                     </div>
                                 </div> -->
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Next Steps</h3>
-                                        <ul class="">
+                                        <ul class="text-start">
                                             <li class="my-3">Currently the front-end skeleton is built in react, and the interactions with The Movie Database work well, however I would like to develop this in NextJS before moving further to get used to using a production level framework</li>
                                             <li class="mb-3">The database is built, but the majority of the backend endpoints still need to be built, this will likely be done after designing a larger portion of the front end to get a better idea of how we want our backend to function based on user interaction</li>
                                         </ul>
@@ -511,27 +511,27 @@ module.exports = async (req, res, next) => {
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row justify-content-center">
-                                    <div class="col-8 my-3">
+                                    <div class="col-lg-8 my-3">
                                         <div class="img-container modal-jumbo">
                                             <img class="card-image" src="./images/PokeImages/pokeGptDashboard.JPG" alt="screenshot of Todo app dashboard view showing Chris Franko's To Do List">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10 text-justify">
                                         <p>One of the projects in a coding course I took was to build a front-end only website that used a third-party API. Since I am overwhelmingly nerdy, I chose <a class="link-primary text-decoration-none link-primary-ovr" href="https://pokeapi.co/" target="_blank">PokeAPI</a>, a very impressive API that returns detailed information on the wonderful world of Pokemon.<br><br>I also had been hearing about the looming threat of our AI overlords, and thought it would be a good idea to get on their good side and implement a AI tool like <a class="link-primary text-decoration-none link-primary-ovr" href="https://openai.com/blog/openai-api" target="_blank">OpenAI's ChatGPT API</a> to my project. Thus I ended up with a single click interface that used PokeAPI to fetch the data on two random pokemon, and then used the OpenAI API to give that data to ChatGPT and request a narrated simulated Pokemon battle. I then decide to make a backend that dealt with the OpenAI API calls in order to hide my API key.</p>
                                     </div>
                                 </div>
 
                                 <div class="row justify-content-center mt-4">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Third-Party APIs</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="overflow-visible bg-dark text-light">
+                                                    <code class="text-start language-js py-1">
 async function getResponseFromChatGPT(pokeNames, randMoves) {
     try {
         const apiKey = process.env.chatApiKey;
@@ -560,7 +560,7 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">Asyncronous function are used with the <i>await</i> command to ensure promises from the API request are resolved before dealing with the data</li>
                                                     <li class="mb-5">Each third-party API returns different data structures, proper testing is needed to ensure one understands the data recieved under different conditions from the API</li>
@@ -573,14 +573,14 @@ async function getResponseFromChatGPT(pokeNames, randMoves) {
                                 </div>
 
                                 <div class="row justify-content-center mt-4">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Manual HTML Manipulation</h3>
                                     </div>
-                                    <div class="col-10">
-                                        <div class="row align-items-center">
-                                            <div class="col-7 d-inline block code-container">
-                                                <pre class="bg-dark text-light">
-                                                    <code class="language-js py-1">
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="overflow-visible bg-dark text-light">
+                                                    <code class="text-start language-js py-1">
 function updatePokeHtml(pokeInfo) {
     let randNums = ["","","","","","","",""];
     document.getElementById('battle').innerText = 'Simulating...';
@@ -610,7 +610,7 @@ function updatePokeHtml(pokeInfo) {
                                                     </code>
                                                 </pre>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
                                                     <li class="mb-5">This was my first project where HTML/CSS and JS were integrated </li>
                                                     <li class="mb-5">Static elements are fetched manually and have their properties altered through JS</li>
@@ -623,9 +623,9 @@ function updatePokeHtml(pokeInfo) {
                                 </div>
                                 
                                 <div class="row justify-content-center my-3">
-                                    <div class="col-10">
+                                    <div class="col-lg-10">
                                         <h3>Next Steps</h3>
-                                        <ul class="">
+                                        <ul class="text-start">
                                             <li class="my-3">The initial API calls to PokeAPI return a list of all available Pokemon, from here I would like to add a dropdown/search list for Pokemon selection so the user can select their own data to submit to ChatGPT</li>
                                             <li class="mb-3">I would like to deploy this project on a larger scale once I have a better cost estimate of how much OpenAI will charge for each call</li>
                                         </ul>

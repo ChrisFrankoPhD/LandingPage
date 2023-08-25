@@ -133,6 +133,10 @@ p.lead {
     border-color: rgb(171, 68, 255);
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 .alert-msg {
     display: none;
     /* display: block; */
@@ -179,3 +183,4 @@ code {
 .hljs-params {
     color: rgb(241, 57, 57)!important;
 }
+
