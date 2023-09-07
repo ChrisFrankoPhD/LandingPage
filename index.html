@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="lead pt-2 fs-3 text-center px-3">ToDo: Minimal To Do List</div>
+                                <div class="lead pt-2 fs-3 text-center px-3">Get it Done: Minimal Planner</div>
                                 <div class="lead pb-2 fs-3 text-center px-3 "><a class="link-primary text-decoration-none link-primary-ovr" href="https://pern-todo-deploy-741651163694.herokuapp.com/" target="_blank">Deployed!</a></div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content overflow-hidden bg-dark">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 w-100 text-center" id="pool1ModalLabel">ToDo: Minimal To Do List</h1>
+                            <h1 class="modal-title fs-5 w-100 text-center" id="pool1ModalLabel">Get it Done: Minimal Planner</h1>
                             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body overflow-x-hidden">
@@ -189,7 +189,7 @@
                                             <div class="col-lg-7 d-inline block code-container">
                                                 <pre class="bg-dark text-light overflow-visible">
                                                     <code class="language-js py-1 text-start">
-// Search todos
+// Search items
 router.get("/todos/search/:search", 
     authorization, 
     async(req, res) => {
@@ -215,9 +215,9 @@ router.get("/todos/search/:search",
                                             </div>
                                             <div class="col-lg-5">
                                                 <ul class="text-center list-unstyled">
-                                                    <li class="mb-5">The pg module is used to access PostgreSQL and store both user profiles and ToDo list items in a relational way</li>
+                                                    <li class="mb-5">The pg module is used to access PostgreSQL and store both user profiles and planner items in a relational way</li>
                                                     <li class="mb-5">The appropriate database queries are made at each endpoint, with variables defined by the client safely injected into the query by Postgres through the variable array</li>
-                                                    <li class="mb-5">User IDs are stored as Universal Unique Identifiers which acts as the foreign key for each ToDo item</li>
+                                                    <li class="mb-5">User IDs are stored as Universal Unique Identifiers which acts as the foreign key for each item</li>
                                                     <li class="mb-5">Passwords are salted and encrypted through the bcrpyt module before being stored, and subsequently validated by bcrypt upon login</li>
                                                 </ul>
                                             </div>
@@ -238,23 +238,23 @@ const router = require("express").Router();
 const authorization = require("../middleware/auth");
 const db = require("../db");
 
-// Get All Todos
+// Get All Items
 router.get("/", authorization, 
     async (req, res) => {...
 });
-// Create a Todo
+// Create a Item
 router.post("/todos", authorization, 
     async (req, res) => {...
 });
-// Update a Todo
+// Update a Item
 router.put("/todos/:todo_id", authorization, 
     async (req, res) => {...
 });
-// Delete a Todo
+// Delete a Item
 router.delete("/todos/:todo_id", authorization, 
     async (req, res) => {...
 });
-// Search Todos
+// Search Items
 router.get("/todos/search/:search", authorization, 
     async (req, res) => {...
 });
@@ -332,8 +332,8 @@ module.exports = async (req, res, next) => {
                                         <h3>Next Steps</h3>
                                         <ul class="text-start">
                                             <li class="mb-3">Rewrite the backend in TypeScript. I have been learning TypeScript while making the RipePotatoes movie review blog project, and would like to refactor a deployed project in TypeScript as well to better understand how it can improve a project</li>
-                                            <li class="my-3">Currently the ordering of the Todos is set, adding the ability to reorder items on the ToDo via drag and drop would make for a better user experience, however this needs to be reflected in the database by some mutable "order" value that remembers the changed order of the Todo items</li>
-                                            <li class="mb-3">The ability to "pin" specific ToDo items at the top of the list</li>
+                                            <li class="my-3">Currently the ordering of the items is set, adding the ability to reorder items via drag and drop would make for a better user experience, however this needs to be reflected in the database by some mutable "order" value that remembers the changed order of the items</li>
+                                            <li class="mb-3">The ability to "pin" specific items at the top of the list</li>
                                         </ul>
                                     </div>
                                 </div>
