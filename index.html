@@ -135,6 +135,24 @@
                             </div> 
                         </div>
 
+                        <div id="chessCard" class="col mt-2">
+                            <div class="card border-0 overflow-hidden position-relative">
+                                <div class="img-container square">
+                                    <img class="card-image" src="./images/MonteChess/chessboard.JPG" alt="chessboard from monte carlo chess program">
+                                </div>
+                                <div class="card-hover flex-column" href="#">
+                                    <button class="btn text-decoration-none text-uppercase fw-semibold modal-btn" data-bs-toggle="modal" data-bs-target="#monteChessModal">Learn More &gt;</button>
+                                    <div class="d-flex align-items-center">
+                                        <a class="icon-anchor fs-1" href="https://github.com/ChrisFrankoPhD/McChess" target="_blank"><i class="fa-brands fa-square-github mx-2" ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="lead pt-2 fs-3 text-center px-3">McChess: A Monte Carlo Chess Simulator</div>
+                                <div class="lead pb-2 fs-3 text-center px-3 "><a class="link-primary text-decoration-none link-primary-ovr" href="https://github.com/ChrisFrankoPhD/McChess" target="_blank">Completed</a></div>
+                            </div>
+                        </div>   
+
                         <div id="ripeCard" class="col mt-2">
                             <div class="card border-0 overflow-hidden position-relative">
                                 <div class="img-container square">
@@ -159,11 +177,11 @@
             </div>
 
 
-            <div class="modal fade" id="TodoModal" tabindex="-1" aria-labelledby="pool1ModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal fade" id="TodoModal" tabindex="-1" aria-labelledby="todoModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content overflow-hidden bg-dark">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 w-100 text-center" id="pool1ModalLabel">Get it Done: Minimal Planner</h1>
+                            <h1 class="modal-title fs-5 w-100 text-center" id="todoModalLabel">Get it Done: Minimal Planner</h1>
                             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body overflow-x-hidden">
@@ -344,11 +362,11 @@ module.exports = async (req, res, next) => {
             </div>
 
 
-            <div class="modal fade" id="RipePotatoesModal" tabindex="-1" aria-labelledby="pool1ModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal fade" id="RipePotatoesModal" tabindex="-1" aria-labelledby="ripeModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content overflow-hidden bg-dark">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 w-100 text-center" id="pool1ModalLabel">Ripe Potatoes: Movie Review Blog</h1>
+                            <h1 class="modal-title fs-5 w-100 text-center" id="ripeModalLabel">Ripe Potatoes: Movie Review Blog</h1>
                             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body overflow-x-hidden">
@@ -500,12 +518,93 @@ module.exports = async (req, res, next) => {
                 </div>
             </div>
 
-
-            <div class="modal fade" id="PokeModal" tabindex="-1" aria-labelledby="pool1ModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal fade" id="monteChessModal" tabindex="-1" aria-labelledby="monteModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content overflow-hidden bg-dark">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 w-100 text-center" id="pool1ModalLabel">Poke-GPT: AI Pokemon Battle Simulator</h1>
+                            <h1 class="modal-title fs-5 w-100 text-center" id="monteModalLabel">McChess: A Monte Carlo Chess Simulator</h1>
+                            <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body overflow-x-hidden">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 my-3">
+                                        <div class="img-container modal-jumbo">
+                                            <img class="card-image" src="./images/MonteChess/FullScreen.JPG" alt="screenshot of Monte Chess app wih chessboard and code in background">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center my-3">
+                                    <div class="col-lg-10 text-justify">
+                                        <p>A full description on this project is coming soon, for now please check out the source code on <a class="link-primary text-decoration-none link-primary-ovr" href="https://github.com/ChrisFrankoPhD/McChess" target="_blank">GitHub!</a>.</p>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mt-4">
+                                    <div class="col-lg-10">
+                                        <h3>Monte Carlo Algorithm</h3>
+                                    </div>
+                                    <div class="col-lg-10">
+                                        <div class="row flex-column flex-lg-row align-items-center">
+                                            <div class="col-lg-7 d-inline block code-container">
+                                                <pre class="overflow-visible bg-dark text-light">
+                                                    <code class="text-start language-py py-1">
+def monte_carlo(board, team, depth, trials):
+    """
+    given a board state, team, move depth, and number of trials, 
+    # runs the full monte carlo simulation for that state, 
+    # and return a tuple representation of the optimal move 
+    """
+    move_list = board.get_all_moves(team)
+    score_tracker = {move: [] for move in move_list}
+
+    # apply all possible current moves for the current team, 
+    # then call run_sim for the resulting board state of each of those moves. 
+    # Builds a dictionary with keys of each possible move, 
+    # and values of the average game score
+    for move in score_tracker:
+        clone_board = board.clone()
+        clone_board.apply_move(move[0], move[1])
+        score_tracker[move] = run_sim(clone_board, team, depth, trials)
+
+    # return the move with either the minimum or maximum gamescore 
+    # depending on if the current team is BLACK (min) or WHITE (max)
+    if team == chessgame.BLACK:
+        return min(score_tracker, key = lambda k: score_tracker[k])
+    else:
+        return max(score_tracker, key = lambda k: score_tracker[k])
+                                                    </code>
+                                                </pre>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <ul class="text-center list-unstyled">
+                                                    <li class="mb-5">Each of the possible currently available moves is applied, and a random simulation of the next board state is done a specified trial number of times,  to the desired depth. The move with the best average game score after these trials is chosen</li>
+                                                    <li class="mb-5">Each simulation layer: the over monte carlo simulation, the simulation for a single move, and each individual random trial, are abstracted into their own functions for optimal test driven development</li>
+                                                    <li class="mb-5">Simulation time increases linearly with trial number and move depth</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center my-3">
+                                    <div class="col-lg-10">
+                                        <h3>Next Steps</h3>
+                                        <ul class="text-start">
+                                            <li class="my-3">Want to implement the ability to select the trial number and depth value in the integrated GUI, instead of changing the constants in the code</li>
+                                            <li class="mb-3">Create a deep learning version of the game with PyTorch for a fun comparison of AI vs traditional simulation methods</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="PokeModal" tabindex="-1" aria-labelledby="pokeModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content overflow-hidden bg-dark">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 w-100 text-center" id="pokeModalLabel">Poke-GPT: AI Pokemon Battle Simulator</h1>
                             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body overflow-x-hidden">
@@ -732,66 +831,6 @@ function updatePokeHtml(pokeInfo) {
                                 <div class="lead pt-2 fs-3 text-center px-3">Paramagnetic Resonance of Hydroanimation Catalysis</div>
                             </div>
                         </div>
-                        <!-- <div class="col mt-2 mb-3">
-                            <div class="card border-0 overflow-hidden position-relative text-center">
-                                <div class="img-container square">
-                                    <img class="card-image" src="./images/PaperImages/ti4o7Combined.png" alt="modern rectangualr pool with blue water in the summer">
-                                </div>
-                                <div class="card-hover">
-                                    <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpcc.2c06441" target="blank_">
-                                        <button class="btn text-decoration-none text-uppercase fw-semibold modal-btn">Learn More &gt;</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mt-2 mb-3">
-                            <div class="card border-0 overflow-hidden position-relative text-center">
-                                <div class="img-container square">
-                                    <img class="card-image" src="./images/PaperImages/litfsiCombined.png" alt="modern rectangualr pool with blue water in the summer">
-                                </div>
-                                <div class="card-hover">
-                                    <a href="https://iopscience.iop.org/article/10.1149/1945-7111/abcf17/meta" target="blank_">
-                                        <button class="btn text-decoration-none text-uppercase fw-semibold modal-btn">Learn More &gt;</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mt-2 mb-3">
-                            <div class="card border-0 overflow-hidden position-relative text-center">
-                                <div class="img-container square">
-                                    <img class="card-image" src="./images/PaperImages/nao2Combined.png" alt="modern rectangualr pool with blue water in the summer">
-                                </div>
-                                <div class="card-hover">
-                                    <a href="https://pubs.acs.org/doi/abs/10.1021/jacs.6b11333" target="blank_">
-                                        <button class="btn text-decoration-none text-uppercase fw-semibold modal-btn">Learn More &gt;</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mt-2 mb-3">
-                            <div class="card border-0 overflow-hidden position-relative text-center">
-                                <div class="img-container square">
-                                    <img class="card-image" src="./images/PaperImages/hosseinCombined.png" alt="modern rectangualr pool with blue water in the summer">
-                                </div>
-                                <div class="card-hover">
-                                    <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpclett.7b02227" target="blank_">
-                                        <button class="btn text-decoration-none text-uppercase fw-semibold modal-btn">Learn More &gt;</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mt-2 mb-3">
-                            <div class="card border-0 overflow-hidden position-relative text-center">
-                                <div class="img-container square">
-                                    <img class="card-image" src="./images/PaperImages/eprCombined.png" alt="modern rectangualr pool with blue water in the summer">
-                                </div>
-                                <div class="card-hover">
-                                    <a href="https://pubs.rsc.org/en/content/articlelanding/2023/dt/d3dt00530e/unauth" target="blank_">
-                                        <button class="btn text-decoration-none text-uppercase fw-semibold modal-btn">Learn More &gt;</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
                 <div class="row mt-4">
